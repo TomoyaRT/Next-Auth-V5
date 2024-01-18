@@ -39,14 +39,9 @@ export const LoginForm = () => {
     setError("");
 
     startTransition(async () => {
-      try {
-        const response = await login(values);
-        setSuccess(response.success);
-        setError(response.error);
-      } catch (error) {
-        console.log("onSubmit login action error", error);
-        setError("Failed to login");
-      }
+      const response = await login(values);
+      setSuccess(response.success);
+      setError(response.error);
     });
   };
 
